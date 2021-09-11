@@ -26,11 +26,18 @@ In Firefox 49.0.2 (and perhaps earlier/later versions), the data attributes that
 }
 
 const Book = ({ title, author, children }) =>{
+  // Click handler event
+  const clickHandller = () =>{
+    alert('This is a click handler event')
+  }
+
   return <article>
     <Image />
     <Title titleName={title}/>
     <Author authorName={author}/>
     <h5>{children}</h5>
+    
+    <button onClick={clickHandller}>Click Event</button>
   </article>
 }
 
