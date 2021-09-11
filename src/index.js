@@ -11,17 +11,26 @@ const BookList = ()=>{
     <Book title='Book 1' author='zakaria1'/>
     <Book title='Book 2' author='zakaria2' />
     <Book title='Book 3' author='zakaria3' />
-    <Book title='Book 4' author='zakaria4' />
+    <Book title='Book 4' author='zakaria4' >
+      Do not store content that should be visible and accessible in data attributes, because assistive technology may not access them. In addition, search crawlers may not index data attributes' values.
+
+The main issues to consider are Internet Explorer support and performance. Internet Explorer 11+ provides support for the standard, but all earlier versions do not support dataset. To support IE 10 and under you need to access data attributes with getAttribute() instead. Also, the performance of reading data-attributes compared to storing this data in a regular JS object is poor.
+
+That said, though, for custom element-associated metadata, they are a great solution.
+
+In Firefox 49.0.2 (and perhaps earlier/later versions), the data attributes that exceed 1022 characters will not be read by Javascript (EcmaScript 4).
+    </Book>
     <Book title='Book 5' author='zakaria5' />
     <Book title='Book 6' author='zakaria6' />
   </section>
 }
 
-const Book = ({ title, author }) =>{
+const Book = ({ title, author, children }) =>{
   return <article>
     <Image />
     <Title titleName={title}/>
     <Author authorName={author}/>
+    <h5>{children}</h5>
   </article>
 }
 
