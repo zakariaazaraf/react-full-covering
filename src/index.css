@@ -1,0 +1,9 @@
+#root section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#root section article {
+  margin: 15px;
+}
