@@ -31,6 +31,10 @@ const Book = ({ title, author, children }) =>{
     alert('This is a click handler event')
   }
 
+  const clickHandllerWithParams = (bookTitle) =>{
+    alert(`Example demonstrating the click event using params\nThis's the post's title : ${bookTitle}`)
+  }
+
   return <article>
     <Image />
     <Title titleName={title}/>
@@ -38,6 +42,8 @@ const Book = ({ title, author, children }) =>{
     <h5>{children}</h5>
     
     <button onClick={clickHandller}>Click Event</button>
+    <button onClick={() => clickHandllerWithParams(title)}>Click Event, passing Params example</button>
+    
   </article>
 }
 
