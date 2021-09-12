@@ -2,6 +2,7 @@ import React from 'react'
 import { data }  from '../data'
 
 const UseStateArrayExample = () => {
+    
     const [people, setPeople] = React.useState(data)
 
     // Delete all people, and hide the delete all btn
@@ -12,7 +13,17 @@ const UseStateArrayExample = () => {
         // Hide the delete all people Btn
         event.target.remove()
     }
-    
+
+    // Delete individual person
+    const removePerson = personId =>{
+        let filterdPersons = people.filter(person =>{
+            let { id } = person
+            if(id !== personId){ return person }
+        })
+
+        setPeople(filterdPersons)
+    }
+
     return <>
         <h1>UseState with array example</h1>
         <h3>Our beloved people</h3>
@@ -22,7 +33,7 @@ const UseStateArrayExample = () => {
                     const {id, name} = person
                     return <div key={id} className='person'>
                         <h5>{name}</h5>
-                        <button className='btn-delete'>Remove Person</button>
+                        <button onClick={ () => removePerson(id) } className='btn-delete'>Remove Person</button>
                     </div>
                 })
             }
