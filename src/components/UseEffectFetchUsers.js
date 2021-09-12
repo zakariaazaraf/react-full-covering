@@ -24,7 +24,9 @@ const UseEffectFetchUsers = () => {
                 users.map(user => {
                     const {id, login, avatar_url, html_url} = user
                     return <article key={id} className='user'>
-                        <img src={avatar_url} alt={login}/>
+                        <a className='avatar-img-link' href={`${html_url}`} target='_blank'>
+                            <img src={avatar_url} alt={login}/>
+                        </a>
                         <div className='user-info'>
                             <h5>{login}</h5>
                             <a href={`${html_url}`} target='_blank' title={`${login}`} >{`${login} Profile`}</a>
