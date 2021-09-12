@@ -16,11 +16,12 @@ const UseStateArrayExample = () => {
 
     // Delete individual person
     const removePerson = personId =>{
-        let filterdPersons = people.filter(person =>{
-            let { id } = person
-            if(id !== personId){ return person }
-        })
+        // let filterdPersons = people.filter(person =>{
+        //     let { id } = person
+        //     if(id !== personId){ return person }
+        // })
 
+        let filterdPersons = people.filter(person => personId !== person.id)
         setPeople(filterdPersons)
     }
 
@@ -38,8 +39,8 @@ const UseStateArrayExample = () => {
                     </div>
                 })
             }
-        </div>
         <button className='btn-delete' onClick={ handelDeletePeoples }>Remove all persons</button>
+        </div>
     </>
 }
 

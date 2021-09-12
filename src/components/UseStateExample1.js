@@ -17,7 +17,7 @@ const UseStateExample1 = () => {
         <>
             <h1>UseState Example N1</h1>
             <h3>{title}</h3>
-            <button className='btn' onClick={handelClick}>Chamge Title</button>
+            <button className='btn' onClick={handelClick}>Change Title</button>
         </>
     );
 }
