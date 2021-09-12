@@ -33,6 +33,7 @@ const UseStateArrayExample = () => {
                     const {id, name} = person
                     return <div key={id} className='person'>
                         <h5>{name}</h5>
+                        {/* Be aware this line throw error if you miss the function synttax */}
                         <button onClick={ () => removePerson(id) } className='btn-delete'>Remove Person</button>
                     </div>
                 })
