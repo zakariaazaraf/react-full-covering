@@ -7,3 +7,14 @@
 #root section article {
   margin: 15px;
 }
+
+#root .btn {
+  color: #fff;
+  background-color: rgb(121 71 136);
+  text-transform: capitalize;
+  padding: 10px 22px;
+  margin: 12px;
+  cursor: pointer;
+  border: 1px solid gray;
+  outline: none;
+}

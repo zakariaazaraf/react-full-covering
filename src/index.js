@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import './index.css';
 
+// Import custom Compent
+import UseStateExample1 from './components/UseStateExample1'
+
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
 //let author = 'Zakaria Azaraf'
@@ -41,8 +44,8 @@ const Book = ({ title, author, children }) =>{
     <Author authorName={author}/>
     <h5>{children}</h5>
     
-    <button onClick={clickHandller}>Click Event</button>
-    <button onClick={() => clickHandllerWithParams(title)}>Click Event, passing Params example</button>
+    <button className='btn' onClick={clickHandller}>Click Event</button>
+    <button className='btn' onClick={() => clickHandllerWithParams(title)}>Click Event, passing Params example</button>
     
   </article>
 }
@@ -54,6 +57,7 @@ const Author = ({ authorName }) => <h4>{authorName}</h4>
 ReactDom.render(
   <React.StrictMode>
     <BookList />
+    <UseStateExample1 />
   </React.StrictMode>,
   document.getElementById("root")
 )
