@@ -6,6 +6,7 @@ import './index.css';
 import UseStateExample1 from './components/UseStateExample1'
 import UseStateArrayExample from './components/UseStateArrayExample'
 import UseEffectBasics from './components/UseEffectBasics'
+import UseEffectFetchUsers from './components/UseEffectFetchUsers'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -62,6 +63,7 @@ ReactDom.render(
     <UseStateExample1 />
     <UseStateArrayExample />
     <UseEffectBasics />
+    <UseEffectFetchUsers />
   </React.StrictMode>,
   document.getElementById("root")
 )

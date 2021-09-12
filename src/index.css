@@ -48,3 +48,30 @@
   padding: 0 12px;
   margin: 15px;
 }
+
+#root .github-users {
+  display: flex;
+  justify-content: space-between;
+}
+
+#root .github-users .user {
+  display: flex;
+  align-items: center;
+  flex-basis: 30%;
+}
+
+#root .github-users .user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+#root .github-users .user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+#root .github-users .user-info h5 {
+  margin: 4px 0;
+}

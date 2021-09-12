@@ -8,8 +8,7 @@ const UseEffectBasics = () => {
     // @@ Do the work out side the Component
     // @@ Calls after the each render/re-render
     // @@ Use dependencies to choose wich and when you want to use the effect
-    useEffect((e)=>{
-        console.log(e)
+    useEffect(()=>{
         if(counter){
             document.title = `Counter Pointe To ${counter}`;
         }
