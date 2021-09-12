@@ -4,6 +4,7 @@ import './index.css';
 
 // Import custom Compent
 import UseStateExample1 from './components/UseStateExample1'
+import UseStateArrayExample from './components/UseStateArrayExample'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -58,6 +59,7 @@ ReactDom.render(
   <React.StrictMode>
     <BookList />
     <UseStateExample1 />
+    <UseStateArrayExample />
   </React.StrictMode>,
   document.getElementById("root")
 )
