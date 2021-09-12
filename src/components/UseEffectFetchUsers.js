@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 const UseEffectFetchUsers = () => {
 
@@ -27,9 +27,10 @@ const UseEffectFetchUsers = () => {
                         <img src={avatar_url} alt={login}/>
                         <div className='user-info'>
                             <h5>{login}</h5>
-                            <Router>
-                                <Link to={`${html_url}`} activeClassName="active" >{`${login} Profile`}</Link>
-                            </Router>
+                            <a href={`${html_url}`} target='_blank' title={`${login}`} >{`${login} Profile`}</a>
+                            {/* <Router>
+                                <Link to={{pathname: `${html_url}`}} target='_blank'>{`${login} Profile`}</Link>
+                            </Router> */}
                         </div>
                         
                     </article>
