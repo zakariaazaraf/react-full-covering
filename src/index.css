@@ -85,3 +85,17 @@
 #root .github-users .user-info h5 {
   margin: 4px 0;
 }
+
+#root .show-component {
+  background-color: rgb(85, 219, 85);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+}
+
+#root .hide-component {
+  background-color: rgb(48, 123, 223);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+}
