@@ -16,10 +16,17 @@ const ShowComponent = () =>{
         setSize(window.innerWidth)
     }
 
-    window.addEventListener('resize', checkSize)
-
+    
     useEffect(()=>{
-        //window.addEventListener('resize', checkSize)
+        // Always use this cleanup function to prevent the event heel
+        // after rendering the component
+        window.addEventListener('resize', checkSize)
+
+        // after clearing the component, you should remove all the events.
+        return ()=>{
+            // When we remove the component, we remove the event listtener
+            window.removeEventListener('resize', checkSize)
+        }
     }, [])
 
     return <h2 className="show-component">Show component!!!!. {size} px</h2>

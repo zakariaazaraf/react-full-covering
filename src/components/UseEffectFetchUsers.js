@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 const UseEffectFetchUsers = () => {
 
