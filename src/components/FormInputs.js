@@ -11,6 +11,7 @@ const FormInputs = () => {
 
         let isValidEmail = email !== ''
         let isValidFirstName = firstName !== ''
+        
         if(isValidEmail && isValidFirstName){
             people.push({email, firstName})
             setPeople(people)
@@ -43,6 +44,16 @@ const FormInputs = () => {
             </div>
             <button type='submit'>Add Person</button>
         </form>
+        {
+            people.map((person, index) =>{
+                let {firstName, email} = person
+                return <>
+                    <h2>Person N{index +1}</h2>
+                    <h5>Email: {email}</h5>
+                    <h5>FirstName: {firstName}</h5>
+                </>
+            })
+        }
     </>
 }
 
