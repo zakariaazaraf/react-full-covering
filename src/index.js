@@ -9,6 +9,7 @@ import UseEffectBasics from './components/UseEffectBasics'
 import UseEffectFetchUsers from './components/UseEffectFetchUsers'
 import ToggleComponent from './components/ToggleComponent'
 import FormInputs from './components/FormInputs'
+import MultipleInputs from './components/MultipleInputs'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -67,7 +68,8 @@ ReactDom.render(
     <UseEffectBasics />
     <UseEffectFetchUsers />
     <ToggleComponent />
-    <FormInputs />
+    {/* <FormInputs /> */}
+    <MultipleInputs />
   </React.StrictMode>,
   document.getElementById("root")
 )

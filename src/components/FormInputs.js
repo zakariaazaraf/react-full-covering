@@ -11,9 +11,9 @@ const FormInputs = () => {
 
         let isValidEmail = email !== ''
         let isValidFirstName = firstName !== ''
-        
+
         if(isValidEmail && isValidFirstName){
-            people.push({email, firstName})
+            people.push({id: new Date().getTime().toString(), email, firstName})
             setPeople(people)
 
             // clear the inputs
@@ -34,11 +34,11 @@ const FormInputs = () => {
     return <>
         <h2>Using Froms with React!!!</h2>
         <form action="" className='form' onSubmit={handleSubmitForm}>
-            <div className="form-control">
+            <div className="form-control" key="a">
                 <label htmlFor="firstName">FirstName :</label>
                 <input type="text" id="firstName" name='firstName' value={firstName} onChange={handelFirstName}/>
             </div>
-            <div className="form-control">
+            <div className="form-control" key="b">
                 <label htmlFor="email">Email :</label>
                 <input type="email" id="email" name='email' value={email} onChange={e => setEmail(e.target.value)}/>
             </div>
@@ -46,11 +46,13 @@ const FormInputs = () => {
         </form>
         {
             people.map((person, index) =>{
-                let {firstName, email} = person
+                let {id, firstName, email} = person
                 return <>
-                    <h2>Person N{index +1}</h2>
-                    <h5>Email: {email}</h5>
-                    <h5>FirstName: {firstName}</h5>
+                    <article key={id}>
+                        <h2>Person N{index +1}</h2>
+                        <h5>Email: {email}</h5>
+                        <h5>FirstName: {firstName}</h5>
+                    </article>
                 </>
             })
         }
