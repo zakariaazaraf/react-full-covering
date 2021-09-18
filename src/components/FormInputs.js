@@ -2,15 +2,30 @@ import React, { useState } from 'react'
 
 const FormInputs = () => {
 
-    const handleSubmitForm = (e) =>{
-        e.preventDefault();
-        
-        console.log('Form beign validated')
-    }
-    
     const [firstName, setFirstName] = useState('')
     const [email, setEmail] = useState('')
+    const [people, setPeople] = useState([])
 
+    const handleSubmitForm = (e) =>{
+        e.preventDefault();
+
+        let isValidEmail = email !== ''
+        let isValidFirstName = firstName !== ''
+        if(isValidEmail && isValidFirstName){
+            people.push({email, firstName})
+            setPeople(people)
+
+            // clear the inputs
+            alert(`You've entered those values. \n Email: ${email}\n FirstName: ${firstName}`)
+            setEmail('')
+            setFirstName('')
+        }else{
+            alert(`You've entered unvalid values. \n Email: ${email}\n FirstName: ${firstName}`)
+        }
+    }
+    
+
+    // Adding the people to the array, make sure all the input are valid
     const handelFirstName = (e) =>{
         setFirstName(e.target.value)
     }
