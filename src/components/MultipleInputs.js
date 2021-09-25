@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 
 const MultipleInputs = () => {
 
-    // const [firstName, setFirstName] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [age, setAge] = useState('')
 
+    const [people, setPeople] = useState([])
     const [user, setUser] = useState([ { email:'', firstName:'', age:'' } ])
 
     const handelChange = (e)=>{
@@ -14,7 +12,6 @@ const MultipleInputs = () => {
         setUser({...user, [name]: value})
     }
 
-    const [people, setPeople] = useState([])
 
     const handleSubmitForm = (e) =>{
         e.preventDefault();

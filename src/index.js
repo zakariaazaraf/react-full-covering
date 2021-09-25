@@ -10,6 +10,7 @@ import UseEffectFetchUsers from './components/UseEffectFetchUsers'
 import ToggleComponent from './components/ToggleComponent'
 import FormInputs from './components/FormInputs'
 import MultipleInputs from './components/MultipleInputs'
+import ReducerHook from './components/ReducerHook'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -62,14 +63,15 @@ const Author = ({ authorName }) => <h4>{authorName}</h4>
 
 ReactDom.render(
   <React.StrictMode>
-    <BookList />
+    {/* <BookList />
     <UseStateExample1 />
     <UseStateArrayExample />
     <UseEffectBasics />
     <UseEffectFetchUsers />
-    <ToggleComponent />
+    <ToggleComponent /> */}
     {/* <FormInputs /> */}
-    <MultipleInputs />
+    {/* <MultipleInputs /> */}
+    <ReducerHook />
   </React.StrictMode>,
   document.getElementById("root")
 )
