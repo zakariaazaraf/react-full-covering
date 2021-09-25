@@ -14,10 +14,13 @@ const ReducerHook = () => {
     const reducer = (state, action)=>{
         // You always need to return a state
         if(action.type === 'TESTING'){
+            
             return {
                 // i don't understand wuy the constructor write this destructring
                 // ...state,
-                people: [...state.people, {id: new Date().getTime().toString(), name}],
+                // people: [...state.people, {id: new Date().getTime().toString(), name}],
+                // Other method doing the same thing
+                people: [...state.people, action.payload],
                 isModleOpen: true,
                 modleContent: 'Person added'
             }
@@ -36,7 +39,12 @@ const ReducerHook = () => {
     const handleSubmitForm = (e)=>{
         e.preventDefault()
         if(name){
-            dispatch({type:'TESTING'})  
+            // payload is just a convention 
+            const newPerson = {id: new Date().getTime().toString(), name}
+            dispatch({
+                type:'TESTING', 
+                payload: newPerson
+            })  
             setName('')   
         }
     }
