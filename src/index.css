@@ -99,3 +99,29 @@
   text-align: center;
   padding: 8px;
 }
+
+section.persons {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  transform: translate(50%);
+}
+
+section.persons .person {
+  display: flex;
+  justify-content: space-between;
+  flex: 100%;
+}
+
+section.persons .person h2 {
+  margin: 0;
+}
+
+.message {
+  width: 50vw;
+  transform: translate(50%);
+  padding: 8px 5px;
+  background-color: rgb(109, 238, 120);
+  color: #fff;
+  border-radius: 5px;
+}

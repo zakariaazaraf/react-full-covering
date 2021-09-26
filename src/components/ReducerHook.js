@@ -7,7 +7,7 @@ const Modle = ({ modleContent, closeModle })=>{
             closeModle()
         }, 3000)
     })
-    return <h2>{modleContent}</h2>
+    return <h2 className='message'>{modleContent}</h2>
 }
 
 const ReducerHook = () => {
@@ -34,7 +34,12 @@ const ReducerHook = () => {
         }
 
         if(action.type === 'REMOVE_ITEM'){
-            return { ...state, isModleOpen: true, modleContent: 'Item removed !' }
+            return { 
+                // ...state, 
+                people: state.people.filter(person => person.id !== action.payload),
+                isModleOpen: true,
+                modleContent: 'Item removed !' 
+            }
         }
 
         if(action.type === 'CLOSE_MODLE'){
@@ -80,15 +85,17 @@ const ReducerHook = () => {
             <input type='text' id='name' name='name' value={name} onChange={(e)=>setName(e.target.value)}></input>
             <button type='submit'>Add Person</button>
         </form>
-        {
-            state.people.map(person =>{
-                let capitalizeName = person.name.slice(0,1).toUpperCase() + person.name.slice(1)
-                return <article key={person.id}>
-                    {/* <h2>{person.name.toUpperCase()}</h2> */}
-                    <h2>{capitalizeName}</h2>
-                </article>
-            })
-        }
+        <section className='persons'>
+            {
+                state.people.map(person =>{
+                    let capitalizeName = person.name.slice(0,1).toUpperCase() + person.name.slice(1)
+                    return <article key={person.id} className='person'>
+                        <h2>{capitalizeName}</h2>
+                        <button className='btn-delete' onClick={()=>{dispatch( {type:'REMOVE_ITEM', payload: person.id} )}}>remove</button>
+                    </article>
+                })
+            } 
+        </section>
     </>
 }
 
