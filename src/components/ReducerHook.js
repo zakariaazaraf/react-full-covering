@@ -1,9 +1,10 @@
 import React , { useState, useReducer } from 'react'
 import {data} from '../data'
 
-const Modle = ({ modleContent})=>{
-    // return <h2>{modleContent}</h2>
-    return <h2>Hello world</h2>
+const Modle = ({ modleContent })=>{
+    console.log(modleContent)
+
+    return <h2>{modleContent}</h2>
 }
 
 const ReducerHook = () => {
@@ -13,17 +14,21 @@ const ReducerHook = () => {
     // Reducer functtion
     const reducer = (state, action)=>{
         // You always need to return a state
-        if(action.type === 'TESTING'){
+        if(action.type === 'ADD_PERSON'){
             
             return {
-                // i don't understand why the constructor write this destructring
-                // ...state,
+                // you always want to keep the last state properties that doesn't changed
+                ...state,
                 // people: [...state.people, {id: new Date().getTime().toString(), name}],
                 // Other method doing the same thing
                 people: [...state.people, action.payload],
                 isModleOpen: true,
                 modleContent: 'Person added'
             }
+        }
+        
+        if(action.type === 'NO_VALUE'){
+            return { ...state, isModleOpen: true, modleContent: 'No persom added !' }
         }
         return state
     }
@@ -42,14 +47,18 @@ const ReducerHook = () => {
             // payload is just a convention 
             const newPerson = {id: new Date().getTime().toString(), name}
             dispatch({
-                type:'TESTING', 
+                type:'ADD_PERSON', 
                 payload: newPerson
             })  
             setName('')   
+        }else{
+            dispatch({ type: 'NO_VALUE' })
         }
     }
+
     return <>
-        {state.isModleOpen && <Modle />}
+        {state.isModleOpen && <Modle modleContent={state.modleContent} />}
+
         <form onSubmit={handleSubmitForm}>
             <label htmlFor='name'>Name:</label>
             <input type='text' id='name' name='name' value={name} onChange={(e)=>setName(e.target.value)}></input>
