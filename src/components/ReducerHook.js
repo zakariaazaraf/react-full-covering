@@ -16,7 +16,7 @@ const ReducerHook = () => {
         if(action.type === 'TESTING'){
             
             return {
-                // i don't understand wuy the constructor write this destructring
+                // i don't understand why the constructor write this destructring
                 // ...state,
                 // people: [...state.people, {id: new Date().getTime().toString(), name}],
                 // Other method doing the same thing
@@ -57,8 +57,10 @@ const ReducerHook = () => {
         </form>
         {
             state.people.map(person =>{
+                let capitalizeName = person.name.slice(0,1).toUpperCase() + person.name.slice(1)
                 return <article key={person.id}>
-                    <h2>{person.name}</h2>
+                    {/* <h2>{person.name.toUpperCase()}</h2> */}
+                    <h2>{capitalizeName}</h2>
                 </article>
             })
         }
