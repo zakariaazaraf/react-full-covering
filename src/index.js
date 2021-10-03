@@ -74,7 +74,7 @@ ReactDom.render(
     {/* <FormInputs /> */}
     {/* <MultipleInputs /> */}
     {/* <ReducerHook /> */}
-    <PropDrilling />
+    {/* <PropDrilling /> */}
     <ContextAPI />
   </React.StrictMode>,
   document.getElementById("root")

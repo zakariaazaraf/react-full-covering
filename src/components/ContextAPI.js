@@ -6,37 +6,27 @@ import {data} from '../data'
 const PersonContext = React.createContext(); // it accept default value
 
 const Lists = ({ people })=>{
-    return <>
-        <section className='persons'>
-            {people.map(person =>{
-                return <List person={person} />
-            })}
+    return <section className='persons'>
+            { people.map(person => <article key={person.id} className={`person`}><List person={person} /></article> ) }
         </section>
-    </>
 }
 
 const List = ({ person })=>{
     const { id } = person
     return <>
-        <article key={id} className='person'>
             <Person person={person}/>
             <RemovePerson id={id} />
-        </article>
-    </>
+        </>
 }
 
 const Person = ({ person })=>{
-    return <>
-            <h2>{person.name}</h2>      
-        </>
+    return <h2>{person.name}</h2>
 }
 
 const RemovePerson = ({ id })=>{
     // Pass the PersonContext
     const { removePerson, hola } = useContext(PersonContext)
-    return<>
-        <button className='btn-delete' onClick={()=>removePerson(id)}>remove, {hola}</button>
-    </>;
+    return <button className='btn-delete' onClick={()=>removePerson(id)}>remove, {hola}</button>;
 }
 
 const ContextAPI = () => {
