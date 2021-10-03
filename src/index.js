@@ -14,6 +14,7 @@ import ReducerHook from './components/ReducerHook'
 import PropDrilling from './components/PropDrilling'
 import ContextAPI from './components/ContextAPI'
 import UseCustomHook from './components/UseCustomHook'
+import ProtoTypes from './components/ProtoTypes'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -78,6 +79,7 @@ ReactDom.render(
     {/* <PropDrilling /> */}
     <ContextAPI />
     <UseCustomHook />
+    <ProtoTypes />
   </React.StrictMode>,
   document.getElementById("root")
 )
