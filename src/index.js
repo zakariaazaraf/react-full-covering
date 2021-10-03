@@ -13,6 +13,7 @@ import MultipleInputs from './components/MultipleInputs'
 import ReducerHook from './components/ReducerHook'
 import PropDrilling from './components/PropDrilling'
 import ContextAPI from './components/ContextAPI'
+import UseCustomHook from './components/UseCustomHook'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -76,6 +77,7 @@ ReactDom.render(
     {/* <ReducerHook /> */}
     {/* <PropDrilling /> */}
     <ContextAPI />
+    <UseCustomHook />
   </React.StrictMode>,
   document.getElementById("root")
 )
