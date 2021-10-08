@@ -125,3 +125,13 @@ section.persons .person h2 {
   color: #fff;
   border-radius: 5px;
 }
+
+.movies-container .movie img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 240px;
+}
+
+.movies-container .movie {
+  flex-basis: auto !important;
+}

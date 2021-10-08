@@ -2,7 +2,7 @@ import React from 'react'
 import { useFetch } from '../custom/useFetch'
 const URL = `https://api.github.com/users`
 
-const Loding = ()=>{
+const Loading = ()=>{
     return <h2>Loding ...</h2>
 }
 
@@ -30,8 +30,8 @@ const DisplayUsers = (({ users }) =>{
 })
 
 const UseCustomHook = () => {
-    const { loding, data : users } = useFetch(URL)
-    return loding ? <Loding /> : <DisplayUsers users={users}/>
+    const { loading, data : users } = useFetch(URL)
+    return loading ? <Loading /> : <DisplayUsers users={users}/>
 }
 
 export default UseCustomHook
