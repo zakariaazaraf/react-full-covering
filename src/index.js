@@ -16,6 +16,7 @@ import PropDrilling from './components/PropDrilling'
 import ContextAPI from './components/ContextAPI'
 import UseCustomHook from './components/UseCustomHook'
 import ProtoTypes from './components/ProtoTypes'
+import Error from './components/Error'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -110,6 +111,9 @@ ReactDom.render(
       </Route>
       <Route exact path='/ProtoTypes'>
         <ProtoTypes />
+      </Route>
+      <Route exact path='*'>
+        <Error />
       </Route>
     </Router>
     {/* <BookList />
