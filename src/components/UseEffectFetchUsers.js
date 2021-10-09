@@ -21,7 +21,7 @@ const UseEffectFetchUsers = () => {
         <section className='github-users'>
             {
                 users.map(user => {
-                    const {id, login, avatar_url, html_url} = user
+                    const {id, login, avatar_url, html_url} = user 
                     return <article key={id} className='user'>
                         <a className='avatar-img-link' href={`${html_url}`} target='_blank'>
                             <img src={avatar_url} alt={login}/>

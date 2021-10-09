@@ -17,6 +17,7 @@ import ContextAPI from './components/ContextAPI'
 import UseCustomHook from './components/UseCustomHook'
 import ProtoTypes from './components/ProtoTypes'
 import Error from './components/Error'
+import Navbar from './components/Navbar'
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -70,8 +71,8 @@ const Author = ({ authorName }) => <h4>{authorName}</h4>
 ReactDom.render(
   <React.StrictMode>
     <Router>
+      <Navbar />
       <Switch>
-
         <Route exact path='/'>
           <h1>Welcome to zak's react learning course</h1>
         </Route>
@@ -119,19 +120,6 @@ ReactDom.render(
         </Route>
       </Switch>
     </Router>
-    {/* <BookList />
-    <UseStateExample1 />
-    <UseStateArrayExample />
-    <UseEffectBasics />
-    <UseEffectFetchUsers />
-    <ToggleComponent /> */}
-    {/* <FormInputs /> */}
-    {/* <MultipleInputs /> */}
-    {/* <ReducerHook /> */}
-    {/* <PropDrilling /> */}
-    {/* <ContextAPI />
-    <UseCustomHook />
-    <ProtoTypes /> */}
   </React.StrictMode>,
   document.getElementById("root")
 )
