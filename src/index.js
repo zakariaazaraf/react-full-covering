@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './index.css';
 
 // Import custom Compent
@@ -67,6 +68,50 @@ const Author = ({ authorName }) => <h4>{authorName}</h4>
 
 ReactDom.render(
   <React.StrictMode>
+    <Router>
+      <Route exact path='/'>
+        <h1>Welcome to zak's react learning course</h1>
+      </Route>
+      <Route exact path='/BookList'>
+        <BookList />
+      </Route>
+      <Route path='/UseStateExample1'>
+        <UseStateExample1 />
+      </Route>
+      <Route path='/UseStateArrayExample'>
+        <UseStateArrayExample />
+      </Route>
+      <Route exact path='/UseEffectBasics'>
+        <UseEffectBasics />
+      </Route>
+      <Route exact path='/UseEffectFetchUsers'>
+        <UseEffectFetchUsers />
+      </Route>
+      <Route exact path='/ToggleComponent'>
+        <ToggleComponent />
+      </Route>
+      <Route exact path='/FormInputs'>
+        <FormInputs />
+      </Route>
+      <Route exact path='/MultipleInputs'>
+        <MultipleInputs />
+      </Route>
+      <Route exact path='/ReducerHook'>
+        <ReducerHook />
+      </Route>
+      <Route path='/PropDrilling'>
+        <PropDrilling />
+      </Route>
+      <Route exact path='/ContextAPI'>
+        <ContextAPI />
+      </Route>
+      <Route exact path='/UseCustomHook'>
+        <UseCustomHook />
+      </Route>
+      <Route exact path='/ProtoTypes'>
+        <ProtoTypes />
+      </Route>
+    </Router>
     {/* <BookList />
     <UseStateExample1 />
     <UseStateArrayExample />
@@ -77,9 +122,9 @@ ReactDom.render(
     {/* <MultipleInputs /> */}
     {/* <ReducerHook /> */}
     {/* <PropDrilling /> */}
-    <ContextAPI />
+    {/* <ContextAPI />
     <UseCustomHook />
-    <ProtoTypes />
+    <ProtoTypes /> */}
   </React.StrictMode>,
   document.getElementById("root")
 )
