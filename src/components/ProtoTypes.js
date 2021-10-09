@@ -10,10 +10,11 @@ const Loading = ()=>{
 }
 
 const Movie = ({ id, original_title, poster_path, title, overview })=>{
-    console.log(id, original_title, poster_path, title, overview)
     return <article className='movie'>
             <a>
-                <img src={`${IMG_URL_BASE}${poster_path}`}></img>
+                {/* <img src={`${IMG_URL_BASE}${poster_path}`}></img> */}
+                {/* You can use short circuit operator to pass default value */}
+                <img src={`${IMG_URL_BASE}${poster_path || 'Default Image'}`}></img>
             </a>
         </article>
 }
@@ -36,6 +37,15 @@ Movie.propTypes = {
     poster_path : PropTypes.string.isRequired,
     title : PropTypes.string.isRequired,
     overview : PropTypes.string.isRequired,
+}
+
+// Default values
+Movie.defaultProps = {
+    id : 22222222,
+    original_title : 'deafult value',
+    poster_path : 'deafult value',
+    title : 'deafult value',
+    overview : 'deafult value'
 }
 
 export default ProtoTypes
