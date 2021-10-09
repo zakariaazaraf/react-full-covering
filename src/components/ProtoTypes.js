@@ -10,6 +10,7 @@ const Loading = ()=>{
 }
 
 const Movie = ({ id, original_title, poster_path, title, overview })=>{
+    console.log(id, original_title, poster_path, title, overview)
     return <article className='movie'>
             <a>
                 <img src={`${IMG_URL_BASE}${poster_path}`}></img>
@@ -23,13 +24,18 @@ const ProtoTypes = () => {
     return loading ? <Loading /> : <section className='movies-container'>
         {
             movies.map( movie =>{
-                const { id } = movie      
-                return <Movie key={id} {...movie}/>
+                return <Movie key={movie.id} {...movie}/>
             })
         }
     </section>
 }
 
-
+Movie.propTypes = {
+    id : PropTypes.number.isRequired, //Change this line to be able to see the prop Error triggered
+    original_title : PropTypes.string.isRequired,
+    poster_path : PropTypes.string.isRequired,
+    title : PropTypes.string.isRequired,
+    overview : PropTypes.string.isRequired,
+}
 
 export default ProtoTypes
