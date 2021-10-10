@@ -13,26 +13,11 @@ const ShowMovie = () => {
 
      // Getting the params from the useParams HOOK
     const { id: paramsID } = useParams()
-    console.log(paramsID)
-        
-    return loading ? <Loading /> : 
-    
-            <>
-                {
+ 
+    return loading ? <Loading /> : <article className='movie'>
+                        <img src={`https://th.bing.com/th/id/R.8d14c9273c6f503726744b425ecd18a9?rik=klVw15wE3E5GAw&pid=ImgRaw&r=0`}></img>
+                    </article>
 
-                    movies.filter(movie =>{
-                        if(movie.id == paramsID){
-                            const { id, original_title, poster_path, title, overview } = movie
-                            console.log({ id, original_title, poster_path, title, overview })
-                            return <article key={id} className='movie'>
-                                {/* <img src={`${IMG_URL_BASE}${poster_path}`}></img> */}
-                                {/* You can use short circuit operator to pass default value */}
-                                <img src={`${IMG_URL_BASE}${poster_path || 'value'}`}></img>
-                            </article>
-                        }
-                    })
-                }
-            </>
 }
 
 ShowMovie.propTypes = {

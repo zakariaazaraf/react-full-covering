@@ -5,10 +5,8 @@ const IMG_URL_BASE = 'https://image.tmdb.org/t/p/original'
 
 
 const Movie = ({ id, original_title, poster_path, title, overview }) => {
-    // Getting the params from the useParams HOOK
-    const { id: paramsID } = useParams()
-    console.log(paramsID)
-    return paramsID ? 'I\'ll fetch you more info': <article className='movie'>
+
+    return  <article className='movie'>
             <Link to={`/movie/${id}`}>
                 {/* <img src={`${IMG_URL_BASE}${poster_path}`}></img> */}
                 {/* You can use short circuit operator to pass default value */}
