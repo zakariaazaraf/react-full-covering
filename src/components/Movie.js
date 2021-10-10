@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 const IMG_URL_BASE = 'https://image.tmdb.org/t/p/original'
 
 
 const Movie = ({ id, original_title, poster_path, title, overview }) => {
-
-    return <article className='movie'>
+    // Getting the params from the useParams HOOK
+    const { id: paramsID } = useParams()
+    console.log(paramsID)
+    return paramsID ? 'I\'ll fetch you more info': <article className='movie'>
             <Link to={`/movie/${id}`}>
                 {/* <img src={`${IMG_URL_BASE}${poster_path}`}></img> */}
                 {/* You can use short circuit operator to pass default value */}
-                <img src={`${IMG_URL_BASE}${poster_path || 'Default Image'}`}></img>
+                <img src={`${IMG_URL_BASE}${poster_path}`}></img>
             </Link>
         </article>
 }

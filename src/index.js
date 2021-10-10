@@ -18,6 +18,8 @@ import UseCustomHook from './components/UseCustomHook'
 import ProtoTypes from './components/ProtoTypes'
 import Error from './components/Error'
 import Navbar from './components/Navbar'
+import ShowMovie from './components/ShowMovie'
+
 
 // Set up some variable 
 let imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dostoevskij_1863.jpg/400px-Dostoevskij_1863.jpg'
@@ -114,6 +116,10 @@ ReactDom.render(
         </Route>
         <Route exact path='/ProtoTypes'>
           <ProtoTypes />
+        </Route>
+        {/* Show movie by id */}
+        <Route exact path='/movie/:id'>
+          <ShowMovie />
         </Route>
         <Route exact path='*'>
           <Error />
