@@ -29,8 +29,8 @@ const Person = ({ person })=>{
 }
 
 const RemovePerson = ({ id, removePerson })=>{
-    return<>
-        <button className='btn-delete' onClick={()=>removePerson(id)}>remove</button>
+    return <>
+        <button className='btn-delete' onClick={() => removePerson(id)}>remove</button>
     </>;
 }
 
@@ -38,9 +38,10 @@ const PropDrilling = () => {
 
     const [people, setPeople] = useState(data)
 
-    const removePerson = (id)=>{
+    const removePerson = id => {
         setPeople(people.filter(person => person.id !== id))
     }
+    
     return <>
     <h1>Prop Drilling</h1>
      <Lists people={people} removePerson={removePerson}/>

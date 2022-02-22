@@ -1,3 +1,8 @@
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
 #root section {
   display: flex;
   justify-content: center;
@@ -134,4 +139,10 @@ section.persons .person h2 {
 
 .movies-container .movie {
   flex-basis: auto !important;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  background-color: darkviolet;
 }

@@ -19,6 +19,8 @@ import ProtoTypes from './components/ProtoTypes'
 import Error from './components/Error'
 import Navbar from './components/Navbar'
 import ShowMovie from './components/ShowMovie'
+import Footer from './components/Footer'
+import Rentstate from './components/Rentstate'
 
 
 // Set up some variable 
@@ -121,10 +123,14 @@ ReactDom.render(
         <Route exact path='/movie/:id'>
           <ShowMovie />
         </Route>
+        <Route exact path='/states'>
+          <Rentstate />
+        </Route>
         <Route exact path='*'>
           <Error />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
