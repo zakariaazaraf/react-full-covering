@@ -46,21 +46,12 @@ const Rentstate = () => {
               <h3>{title_l1}</h3>
               <img className='estate-img' src={url} alt={title_l1}></img>
               <h4>contactName: {contactName}</h4>
-              <div>
-                  <span>Price: {price}</span>
-              </div>
-              <div>
-                  <span>Area: {area}</span>
-              </div>
-              <div>
-                  <span>Bathrooms: {baths}</span>
-              </div>
-              <div>
-                  <p>Mobile: {mobile}</p>
-                  <p>Phone: {phone}</p>
-                  <p>whatsapp: {whatsapp}</p>
-              </div>
-              <a>Link to the rent state</a>
+              <div><span>Price: {price}</span></div>
+              <div><span>Area: {area}</span></div>
+              <div><span>Bathrooms: {baths}</span></div>
+              <div><span>{mobile && `Mobile: ${mobile}`}</span></div>
+              <div><span>{phone && `Phone: ${phone}`}</span></div>
+              <div><span>{whatsapp && `whatsapp: ${whatsapp}`}</span></div>
           </article>
         }) 
       : 
