@@ -40,16 +40,25 @@ const Rentstate = () => {
       ? 
         states.map((state) => {
             console.log(state)
-          const {id, agency, area, baths, category, contactName, coverPhoto, phoneNumber, price, title, title_l1} = state
-          const {url} = coverPhoto
-        //   console.log(agency, area, baths, category, contactName, coverPhoto, phoneNumber, price, title, title_l1)
+          const {id, agency, area, baths, category, contactName, coverPhoto: {url}, phoneNumber: {mobile, phone, whatsapp}, price, title, title_l1, externalID} = state
           return <article key={id} className='estate'>
+              <h2>{title}</h2>
               <h3>{title_l1}</h3>
               <img className='estate-img' src={url} alt={title_l1}></img>
-              <p>Description</p>
+              <h4>contactName: {contactName}</h4>
               <div>
-                  <span>{price}</span>
-                  <span>{price}</span>
+                  <span>Price: {price}</span>
+              </div>
+              <div>
+                  <span>Area: {area}</span>
+              </div>
+              <div>
+                  <span>Bathrooms: {baths}</span>
+              </div>
+              <div>
+                  <p>Mobile: {mobile}</p>
+                  <p>Phone: {phone}</p>
+                  <p>whatsapp: {whatsapp}</p>
               </div>
               <a>Link to the rent state</a>
           </article>
