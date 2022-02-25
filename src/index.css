@@ -146,3 +146,8 @@ section.persons .person h2 {
   justify-content: center;
   background-color: darkviolet;
 }
+
+.estate-container .estate .estate-img {
+  width: 400px;
+  height: 300px;
+}
